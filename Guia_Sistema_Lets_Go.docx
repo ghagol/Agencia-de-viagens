@@ -1,0 +1,267 @@
+# Modelo de dados
+
+Gerado a partir dos ficheiros entregues. `⚪ entrada` = preenchido por pessoa/script · `🔵 calculada` = fórmula.
+
+
+## Operacional
+
+
+### `Clientes` — 12 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Cliente | ⚪ entrada |
+| B | Nome completo | ⚪ entrada |
+| C | Telefone | ⚪ entrada |
+| D | Email | ⚪ entrada |
+| E | NIF | ⚪ entrada |
+| F | Documento (CC/Passaporte) | ⚪ entrada |
+| G | Validade documento | ⚪ entrada |
+| H | Nacionalidade | ⚪ entrada |
+| I | Data nascimento | ⚪ entrada |
+| J | Data registo | ⚪ entrada |
+| K | Observações | ⚪ entrada |
+| L | Idade (hoje) | 🔵 calculada |
+
+### `Pacotes` — 8 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Pacote | ⚪ entrada |
+| B | Nome do pacote | ⚪ entrada |
+| C | Tipo | ⚪ entrada |
+| D | Destino | ⚪ entrada |
+| E | Descrição | ⚪ entrada |
+| F | Datas fixas (Grupo) | ⚪ entrada |
+| G | Preço base (€) (Grupo) | ⚪ entrada |
+| H | Estado | ⚪ entrada |
+
+### `Fornecedores` — 9 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Fornecedor | ⚪ entrada |
+| B | Nome | ⚪ entrada |
+| C | Tipo | ⚪ entrada |
+| D | Site / plataforma | ⚪ entrada |
+| E | Conta usada (email/login) | ⚪ entrada |
+| F | Email apoio | ⚪ entrada |
+| G | Telefone apoio | ⚪ entrada |
+| H | Prazo alteração/cancelamento | ⚪ entrada |
+| I | Observações | ⚪ entrada |
+
+### `Reservas` — 32 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Reserva | ⚪ entrada |
+| B | Data registo | ⚪ entrada |
+| C | ID Cliente | ⚪ entrada |
+| D | Cliente (titular) | 🔵 calculada |
+| E | ID Pacote | ⚪ entrada |
+| F | Pacote | 🔵 calculada |
+| G | Tipo | 🔵 calculada |
+| H | Destino | 🔵 calculada |
+| I | Data início | ⚪ entrada |
+| J | Data fim | ⚪ entrada |
+| K | Nº pax | ⚪ entrada |
+| L | Estado | ⚪ entrada |
+| M | Estado aprovação | ⚪ entrada |
+| N | Custo total forn. (€) | 🔵 calculada |
+| O | Valor venda (€) | ⚪ entrada |
+| P | Margem (€) | 🔵 calculada |
+| Q | Aprovado por | ⚪ entrada |
+| R | Tipo pagamento | ⚪ entrada |
+| S | Nº prestações | ⚪ entrada |
+| T | Prestações pagas | 🔵 calculada |
+| U | Valor/prestação (€) | 🔵 calculada |
+| V | Valor pago (€) | 🔵 calculada |
+| W | Valor pendente (€) | 🔵 calculada |
+| X | Prestações em falta | 🔵 calculada |
+| Y | % pago | 🔵 calculada |
+| Z | Vendedor | ⚪ entrada |
+| AA | Criado por | ⚪ entrada |
+| AB | Motivo (cancel./orç.) | ⚪ entrada |
+| AC | Contactado? | ⚪ entrada |
+| AD | Próxima ação | ⚪ entrada |
+| AE | Data follow-up | ⚪ entrada |
+| AF | Observações | ⚪ entrada |
+
+### `Serviços` — 14 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Reserva | ⚪ entrada |
+| B | Tipo | ⚪ entrada |
+| C | Descrição / trecho | ⚪ entrada |
+| D | Fornecedor (ID) | ⚪ entrada |
+| E | Fornecedor (nome) | 🔵 calculada |
+| F | Localizador/PNR | ⚪ entrada |
+| G | Sentido | ⚪ entrada |
+| H | Nº escalas | ⚪ entrada |
+| I | Duração (h) | ⚪ entrada |
+| J | Embarque | ⚪ entrada |
+| K | Desembarque | ⚪ entrada |
+| L | Check-in (hotel) | ⚪ entrada |
+| M | Check-out (hotel) | ⚪ entrada |
+| N | Custo (€) | ⚪ entrada |
+
+### `Passageiros` — 11 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Reserva | ⚪ entrada |
+| B | Nome | ⚪ entrada |
+| C | Titular? | ⚪ entrada |
+| D | Documento | ⚪ entrada |
+| E | Validade documento | ⚪ entrada |
+| F | Nacionalidade | ⚪ entrada |
+| G | Data nascimento | ⚪ entrada |
+| H | Idade à data da viagem | 🔵 calculada |
+| I | Aeroporto / partida | ⚪ entrada |
+| J | Alerta documento | 🔵 calculada |
+| K | Observações | ⚪ entrada |
+
+### `Registos` — 6 colunas
+
+| Col | Campo | Tipo |
+|---|---|---|
+| A | ID Reserva | ⚪ entrada |
+| B | Data | ⚪ entrada |
+| C | Valor recebido (€) | ⚪ entrada |
+| D | Método | ⚪ entrada |
+| E | Observações | ⚪ entrada |
+| G | 🔎 Consultar | ⚪ entrada |
+
+## Financeiro
+
+
+### `Importar Reservas` — 32 colunas
+
+| Col | Campo |
+|---|---|
+| A | ID Reserva |
+| B | Data registo |
+| C | ID Cliente |
+| D | Cliente |
+| E | ID Pacote |
+| F | Pacote |
+| G | Tipo |
+| H | Destino |
+| I | Data início |
+| J | Data fim |
+| K | Nº pax |
+| L | Estado |
+| M | Estado aprovação |
+| N | Custo total (€) |
+| O | Valor venda (€) |
+| P | Margem (€) |
+| Q | Aprovado por |
+| R | Tipo pagamento |
+| S | Nº prestações |
+| T | Prestações pagas |
+| U | Valor/prestação (€) |
+| V | Valor pago (€) |
+| W | Valor pendente (€) |
+| X | Prestações em falta |
+| Y | % pago |
+| Z | Vendedor |
+| AA | Criado por |
+| AB | Motivo |
+| AC | Contactado? |
+| AD | Próxima ação |
+| AE | Data follow-up |
+| AF | Observações |
+
+### `Importar Registos` — 5 colunas
+
+| Col | Campo |
+|---|---|
+| A | ID Reserva |
+| B | Data |
+| C | Valor recebido (€) |
+| D | Método |
+| E | Observações |
+
+### `Comissões` — 10 colunas
+
+| Col | Campo |
+|---|---|
+| A | ID Reserva |
+| B | Data |
+| C | Funcionário |
+| D | Valor venda (€) |
+| E | Custo total (€) |
+| F | Base |
+| G | Taxa |
+| H | Comissão (€) |
+| J | Funcionário |
+| K | Comissão (€) |
+
+### `Custos Fixos` — 7 colunas
+
+| Col | Campo |
+|---|---|
+| A | Descrição |
+| B | Categoria |
+| C | Valor (€) |
+| D | Periodicidade |
+| E | Início |
+| F | Fim |
+| G | Valor mensal equiv. (€) |
+
+### `Gastos Adicionais` — 7 colunas
+
+| Col | Campo |
+|---|---|
+| A | Data |
+| B | Categoria |
+| C | Descrição |
+| D | Valor (€) |
+| E | Método |
+| F | Observações |
+| H | Por categoria |
+
+### `Saídas de Caixa` — 6 colunas
+
+| Col | Campo |
+|---|---|
+| A | Data |
+| B | Categoria |
+| C | Descrição |
+| D | ID Reserva (opcional) |
+| E | Valor pago (€) |
+| F | Método |
+
+## Relações
+
+- `Reservas.ID Cliente` → `Clientes.ID Cliente`
+- `Reservas.ID Pacote` → `Pacotes.ID Pacote`
+- `Serviços.ID Reserva` → `Reservas.ID Reserva`  *(1 reserva : N serviços)*
+- `Serviços.Fornecedor (ID)` → `Fornecedores.ID Fornecedor`
+- `Passageiros.ID Reserva` → `Reservas.ID Reserva`  *(1 reserva : N passageiros)*
+- `Registos.ID Reserva` → `Reservas.ID Reserva`  *(1 reserva : N pagamentos)*
+
+## Convenção de IDs
+
+| Prefixo | Entidade |
+|---|---|
+| `C-001` | Cliente |
+| `P-001` | Pacote |
+| `R-2026-001` | Reserva (ano no ID) |
+| `A-001` | Fornecedor aéreo |
+| `H-001` | Fornecedor hotel |
+| `T-001` | Fornecedor transporte |
+| `O-001` | Outro fornecedor / operador |
+
+## Cálculos-chave
+
+| Campo | Fórmula (essência) |
+|---|---|
+| Custo total da reserva | `SUMIF(Serviços!ID; esta reserva; Serviços!Custo)` |
+| Margem | `Valor venda − Custo total` |
+| Valor pago | `SUMIF(Registos!ID; esta reserva; Registos!Valor)` |
+| Valor pendente | `Valor venda − Valor pago` |
+| Idade à data da viagem | `DATEDIF(nascimento; data de início; "Y")` |
+| Alerta de documento | validade vs. data de regresso (+ margem de meses de `Configurações`) |
+| Saldo de caixa | `saldo inicial + Σ recebimentos − Σ saídas reais` |

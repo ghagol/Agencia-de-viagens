@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporários de escritório
+~$*
+.~lock.*
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Saídas de build
+/build/
+*.pdf
